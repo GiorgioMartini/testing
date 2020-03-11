@@ -12,17 +12,27 @@ class MovieDetail extends Component {
     movie: {},
   }
 
-  async componentDidMount() {
-    try {
-      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=hi&language=en-US`);
-      const movie = await res.json();
-      this.setState({
-        movie,
-      });
-    } catch (e) {
-      console.log(e);
-    }
+  componentDidMount() {
+      fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=hi&language=en-US`)
+        .then( res => res.json())
+        .then( movie => {
+          this.setState({ movie })
+          console.log(movie)
+        })
+         .catch( e => console.log(e))
   }
+
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=hi&language=en-US`);
+  //     const movie = await res.json();
+  //     this.setState({
+  //       movie,
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
   render() {
     const { movie } = this.state;
@@ -34,7 +44,7 @@ class MovieDetail extends Component {
             <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
           </Overdrive>
           <div>
-            <h1>{movie.title}</h1>
+            <h1 data-testid="movie-title">{movie.title}</h1>
             <h3>{movie.release_date}</h3>
             <p>{movie.overview}</p>
           </div>

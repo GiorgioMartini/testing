@@ -8,10 +8,12 @@ import './App.css';
 
 import MoviesList from './MoviesList';
 import MovieDetail from './MovieDetail';
+import Counter from './MovieForm';
 
 const App = () => (
   <Router>
     <div className="App">
+      <Counter />
       <header className="App-header">
         <Link to="/">
           <img src={logo} className="App-logo" alt="logo" />
