@@ -17,7 +17,6 @@ class MovieDetail extends Component {
         .then( res => res.json())
         .then( movie => {
           this.setState({ movie })
-          console.log(movie)
         })
          .catch( e => console.log(e))
   }
