@@ -1,7 +1,7 @@
 import React from 'react'
 import {render, cleanup, waitForElement } from 'react-testing-library'
 import { MemoryRouter } from 'react-router-dom'
-import MovieDetail from './MovieDetail'
+import MovieDetail from '../MovieDetail'
 global.fetch = require('jest-fetch-mock')
 
 afterEach(() => {

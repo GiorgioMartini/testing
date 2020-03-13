@@ -11,13 +11,13 @@ class MoviesList extends PureComponent {
   async componentDidMount() {
     try {
       const res = await fetch(
-        'https://api.themoviedb.org/3/discover/movie?api_key=62a958396506ab41d5e9adf0f55261a3&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1',
-      );
+        // 'https://api.themoviedb.org/3/discover/movie?api_key=62a958396506ab41d5e9adf0f55261a3&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1',
+        'https://api.themoviedb.org/3/discover/movie?api_key=api_key&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1',
+      )
       const movies = await res.json();
-      console.log(movies)
-      this.setState({
-        movies: movies.results,
-      });
+      if (movies.success) {
+        this.setState({ movies: movies.results })
+      }
     } catch (e) {
       console.log(e);
     }

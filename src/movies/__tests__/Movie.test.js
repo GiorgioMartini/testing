@@ -1,6 +1,6 @@
 import React from 'react'
 import {render, cleanup, getByTestId } from 'react-testing-library'
-import Movie, {POSTER_PATH} from './Movie'
+import Movie, {POSTER_PATH} from '../Movie'
 import { MemoryRouter } from 'react-router-dom'
 
 afterEach(() => {

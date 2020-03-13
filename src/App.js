@@ -6,13 +6,13 @@ import {
 import logo from './logo.svg';
 import './App.css';
 
-import MoviesList from './MoviesList';
-import MovieDetail from './MovieDetail';
-import Counter from './MovieForm';
+import MoviesList from './movies/MoviesList';
+import MovieDetail from './movies/MovieDetail';
+import Counter from './Counter';
 
 const App = () => (
   <Router>
-    <div className="App">
+    <div data-testid="app" className="App">
       <Counter />
       <header className="App-header">
         <Link to="/">
